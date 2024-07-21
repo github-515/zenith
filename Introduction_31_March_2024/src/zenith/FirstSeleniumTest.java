@@ -4,15 +4,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import config.PropertiesFile;
+
 public class FirstSeleniumTest {
 
-	static String browser;
+	public static String browser;
 	static WebDriver driver;
 	public static void main(String[] args) {
-		setBrowser();
+//		setBrowser();
+		PropertiesFile.readPropertiesFile();
 		setBrowserConfig();
 		runTest();
-
+		PropertiesFile.writePropertiesFile();
 		
 	}
 
